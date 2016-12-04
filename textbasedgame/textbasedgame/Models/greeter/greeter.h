@@ -2,6 +2,9 @@
 #include <string>
 #include <iostream>
 
+#ifndef Greeter_H
+#define Greeter_H
+
 using namespace std;
 
 class Greeter
@@ -16,3 +19,5 @@ public:
 	void askName();
 	void sayGreeting();
 };
+
+#endif

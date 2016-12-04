@@ -24,7 +24,10 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="greeter\greeter.h">
+    <ClInclude Include="Models\greeter\greeter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\unit\unit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +38,10 @@
     <ClCompile Include="textbasedgame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="greeter\greeter.cpp">
+    <ClCompile Include="Models\greeter\greeter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\unit\unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

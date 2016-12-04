@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Greeter::Greeter() 
+Greeter::Greeter()
 {
 	defaultQuestion = "Who are you?";
 	defaultGreeting = "Fuck this shit";
@@ -22,7 +22,7 @@ void Greeter::askName()
 	cin >> name;
 }
 
-void Greeter::sayGreeting() 
+void Greeter::sayGreeting()
 {
 	cout << defaultGreeting << ", " << name << endl;
 }
