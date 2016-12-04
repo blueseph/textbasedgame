@@ -1,6 +1,5 @@
-﻿  stdafx.cpp
-  textbasedgame.cpp
-  greeter.cpp
+﻿  textbasedgame.cpp
+  game.cpp
   Generating Code...
   textbasedgame.vcxproj -> D:\Coding\CPP Projects\textbasedgame\textbasedgame\x64\Debug\textbasedgame.exe
   textbasedgame.vcxproj -> D:\Coding\CPP Projects\textbasedgame\textbasedgame\x64\Debug\textbasedgame.pdb (Full PDB)

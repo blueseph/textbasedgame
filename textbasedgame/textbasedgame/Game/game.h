@@ -1,23 +1,28 @@
 #include <vector>
 #include <string>
-#include "../Message/message.h"
+#include <windows.h>
+
 
 #ifndef GAME_H
 #define GAME_H
+using namespace std;
 
 class Game
 {
 	int _tickRate;
-	std::vector<Message*>* _messages;
+	vector<string>* _messages;
 	bool _isRunning = true;
+	void InitMembers();
 	void RunLoop();
+	LONG GetTimeInMilliseconds();
 	void AskForInput();
 	void ProcessQueue();
+	~Game();
 
 public:
 	Game();
 	Game(int tickrate);
-	Message* AddMessage(std::string message);
+	void AddMessage(string message);
 	void Start();
 };
 

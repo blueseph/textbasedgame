@@ -1,43 +1,72 @@
 #include "game.h"
-#include "../Message/message.h"
 #include <string>
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
 Game::Game()
 {
-	_tickRate = 30;
-	_messages = new std::vector<Message*>();
+	_tickRate = 100;
+	InitMembers();
 }
 
 Game::Game(int tickrate)
 {
 	_tickRate = tickrate;
+	InitMembers();
+}
+
+void Game::InitMembers()
+{
+	_messages = new vector<string>();
 }
 
 void Game::RunLoop()
 {
-	do {
-		ProcessQueue();
-	} while (_isRunning);
+	LONG last_tick_ms = GetTimeInMilliseconds();
+	do 
+	{
+		LONG current_time = GetTimeInMilliseconds();
+		if (current_time - last_tick_ms > _tickRate)
+		{
+			ProcessQueue();
+			last_tick_ms = current_time;
+			_isRunning = false;
+		}
+	} 
+	while (_isRunning);
+}
+
+LONG Game::GetTimeInMilliseconds() 
+{
+	SYSTEMTIME time;
+	GetSystemTime(&time);
+	LONG time_ms = (time.wSecond * 1000) + time.wMilliseconds;
+	return time_ms;
 }
 
 void Game::AskForInput()
 {
 }
 
-Message* Game::AddMessage(std::string message) 
+void Game::AddMessage(string message) 
 {
-	Message nextMessage = new Message();
+	_messages->push_back(message);
 }
 
 void Game::ProcessQueue()
 {
-	for (int i = _messages.begin(); i != _messages.end(); i++)
+	for (auto &msg : *_messages)
 	{
-		cout << "thing";
+		cout << msg << endl;
 	}
+	_messages->clear();
+}
+
+Game::~Game()
+{
+	delete _messages;
 }
 
 void Game::Start()
@@ -46,4 +75,7 @@ void Game::Start()
 	{ 
 		RunLoop(); 
 	}
+	string wait;
+	cout << "we're done here." << endl;
+	cin >> wait;
 }
