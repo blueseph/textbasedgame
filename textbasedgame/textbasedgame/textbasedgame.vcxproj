@@ -147,12 +147,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game\game.h" />
+    <ClInclude Include="Message\message.h" />
     <ClInclude Include="Models\greeter\greeter.h" />
     <ClInclude Include="Models\unit\unit.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Game\game.cpp" />
     <ClCompile Include="Models\greeter\greeter.cpp" />
     <ClCompile Include="Models\unit\unit.cpp" />
     <ClCompile Include="stdafx.cpp">
