@@ -9,14 +9,20 @@ class Unit
 {
 	private:
 		string _name;
-		int _xPos;
-		int _yPos;
+		int _strength;
+		int _intellect;
+		int _dexterity;
+		int _constitution;
+		int _currHp = 1;
+		int _maxHp = 1;
+
+		const int CONST_MULT = 8;
 
 	public:
 		Unit();
-		Unit(string name, int xPos, int yPos);
-		bool move(int xPos, int yPos);
-		bool attack(int xPos, int yPos);
+		Unit(string name);
+		Unit(string name, int strength, int intellect, int dexterity, int con);
+		void recalc_hp();
 };
 
 #endif

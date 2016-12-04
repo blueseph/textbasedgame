@@ -4,26 +4,36 @@
 Unit::Unit() 
 {
 	_name = "Unknown";
-	_xPos = 0;
-	_yPos = 0;
 }
 
-Unit::Unit(string name, int xPos, int yPos)
+Unit::Unit(string name)
 {
 	_name = name;
-	_xPos = xPos;
-	_yPos = yPos;
+	_strength = 1;
+	_intellect = 1;
+	_dexterity = 1;
+	_constitution = 1;
+
+	recalc_hp();
 }
 
-bool Unit::move(int xPos, int yPos) {
-	_xPos = xPos;
-	_yPos = yPos;
+Unit::Unit(string name, int strength, int intellect, int dexterity, int constitution)
+{
+	_name = name;
+	_strength = strength;
+	_intellect = intellect;
+	_dexterity = dexterity;
+	_constitution = constitution;
 
-	return true;
+	recalc_hp();
 }
 
-bool Unit::attack(int xPos, int yPos) {
-	// todo later when we have a map
+void Unit::recalc_hp()
+{
+	int hpDifference;
+	hpDifference = _currHp - _maxHp;
 
-	return true;
+	_maxHp = _constitution * CONST_MULT;
+	_currHp = _maxHp - hpDifference;
 }
+
