@@ -33,7 +33,11 @@
     <ClInclude Include="Models\character_factory\characterfactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="Game\game.h">
+=======
+    <ClInclude Include="Models\combat_handler\combathandler.h">
+>>>>>>> Stashed changes
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,7 +57,11 @@
     <ClCompile Include="Models\character_factory\characterfactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="Game\game.cpp">
+=======
+    <ClCompile Include="Models\combat_handler\combathandler.cpp">
+>>>>>>> Stashed changes
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -14,8 +14,10 @@ Unit* CharacterFactory::createHero()
 	cin >> type;
 
 	cout << name << ", you are a " << type << endl;
+	cin >> type;
 	
 	Unit* unit = new Unit(name, 1, 1, 1, 10);
+
 	
 	return unit;
 }

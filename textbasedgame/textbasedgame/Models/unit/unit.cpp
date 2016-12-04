@@ -1,4 +1,5 @@
 #include "unit.h"
+#include <iostream>
 #include <string>
 
 Unit::Unit() 
@@ -14,7 +15,7 @@ Unit::Unit(string name)
 	_dexterity = 1;
 	_constitution = 1;
 
-	recalc_hp();
+	RecalcHp();
 }
 
 Unit::Unit(string name, int strength, int intellect, int dexterity, int constitution)
@@ -25,10 +26,31 @@ Unit::Unit(string name, int strength, int intellect, int dexterity, int constitu
 	_dexterity = dexterity;
 	_constitution = constitution;
 
-	recalc_hp();
+	RecalcHp();
 }
 
-void Unit::recalc_hp()
+string Unit::GetName()
+{
+	return _name;
+}
+
+int Unit::GetHealth()
+{
+	return _currHp;
+}
+
+void Unit::Attack(Unit* unit)
+{
+
+	//todo make this work for other types;
+	int damage = _strength * DAMAGE_MULT;
+
+	cout << _name << " deals " << damage << " points of damage to " << unit->GetName() << endl;
+
+	unit->ApplyDamage(damage);
+}
+
+void Unit::RecalcHp()
 {
 	int hpDifference;
 	hpDifference = _currHp - _maxHp;
@@ -36,4 +58,16 @@ void Unit::recalc_hp()
 	_maxHp = _constitution * CONST_MULT;
 	_currHp = _maxHp - hpDifference;
 }
+
+void Unit::ApplyDamage(int damage)
+{
+	_currHp -= damage;
+}
+
+bool Unit::CheckDeath()
+{
+
+	return _currHp <= 0;
+}
+
 
