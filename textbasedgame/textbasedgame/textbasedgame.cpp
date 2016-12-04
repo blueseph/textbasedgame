@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 void main()
 {
 	string myString;
