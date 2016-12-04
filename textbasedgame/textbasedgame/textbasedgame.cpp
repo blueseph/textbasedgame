@@ -2,10 +2,20 @@
 //
 
 #include "stdafx.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 
-int main()
+void main()
 {
-    return 0;
+	string myString;
+	string mySecondString;
+
+	cin >> myString;
+	cout << myString << endl;
+	cin >> mySecondString;
+
 }
 
